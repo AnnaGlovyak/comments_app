@@ -1,0 +1,34 @@
+nav {
+  display: flex;
+  justify-content: end;
+  margin-top: 30px;
+
+  .pagination {
+    display: flex;
+    align-items: flex-end;
+    width: 250px;
+    justify-content: space-between;
+
+    &__item {
+      color: $font-color-pagination;
+      font-size: $font-size-small;
+      font-weight: bold;
+    }
+
+    &__item:hover {
+        color: $font-color-text;
+        cursor: pointer;
+    }
+  }
+}
+
+.active {
+  color: $font-color-text;
+  text-decoration: underline;
+  pointer-events: none;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

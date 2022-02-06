@@ -1,19 +1,18 @@
-import Icon from './icon.png';
-
 import './style.scss';
+import PageController from './page/page_controller.js';
+import FormController from './send_form/form_controller.js';
+import PaginationController from './pagination/pagination_controller.js';
+import LoadBtnController from './load-btn/load-btn_controller.js';
+import CommentController from './comment/comment_controller.js';
+import ListController from '../src/list/list_controller.js';
 
-function component() {
-    const element = document.createElement('div');
+const page = new PageController();
+const form = new FormController();
+const comment = new CommentController();
+const pagination = new PaginationController();
+const loadBtn = new LoadBtnController();
+const list = new ListController();
 
-    element.innerHTML = 'Hello Webpack 5';
-    element.classList.add('hello');
-
-    const myIcon = new Image();
-    myIcon.src = Icon;
-
-    element.appendChild(myIcon);
-
-    return element;
-}
-
-document.body.appendChild(component());
+// form.init();
+// list.init();
+page.init();

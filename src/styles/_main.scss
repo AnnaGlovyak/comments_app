@@ -1,0 +1,26 @@
+@import 'reset';
+@import 'variables';
+@import 'form';
+@import 'pagination';
+@import 'comments';
+@import 'load-button';
+
+.main {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  color: $font-color-text;
+
+  .title {
+    font-size: $font-size-title;
+    color: $font-color-title;
+    padding-top: 50px;
+  }
+
+  .form-section, .comments-section {
+    width: 100%;
+    margin: 0 auto;
+  }
+}

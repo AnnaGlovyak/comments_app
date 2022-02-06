@@ -1,0 +1,19 @@
+.load-more-button {
+  width: 300px;
+  height: 40px;
+  background-color: transparent;
+  color: $bg-color-btn;
+  font-size: $font-size-middle;
+  font-weight: bold;
+  margin: 30px auto;
+  border: none;
+}
+
+.load-more-button:hover {
+  cursor: pointer;
+  color: $font-color-pagination;
+}
+
+.hide {
+  display: none;
+}
