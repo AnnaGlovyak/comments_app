@@ -34,7 +34,7 @@ export default class Publisher{
     loadMore: 'LOAD MORE DATA ON PAGE',
     renderListOnPage: 'RENDER COMMENTS LIST ON CURRENT PAGE',
     clickPagBtn: 'CLICK ON PAGGINATION BUTTON',
-    clickOnSendBtn: 'CLICK ON SEND COMMENT BTN',///fixed
+    clickOnSendBtn: 'CLICK ON SEND COMMENT BTN',
     hideLoadBtn: 'HIDE LOAD MORE BUTTON'
   }
 }

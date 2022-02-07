@@ -44,14 +44,15 @@ export default class PagiantionView {
   }
 
   setupPagination = (navigationData) => {
+    const isOnLastPage = navigationData.currentPageNumber === navigationData.lastPageNumber;
     this.btnsValue = {
       first: (navigationData.currentPageNumber === 1) ? null : 1,
-      last: (navigationData.currentPageNumber === navigationData.lastPageNumber) ? null : navigationData.lastPageNumber,
+      last: (isOnLastPage) ? null : navigationData.lastPageNumber,
       current: navigationData.currentPageNumber,
-      second: (navigationData.currentPageNumber === navigationData.lastPageNumber) ? null : navigationData.currentPageNumber + 1,
-      third: (navigationData.currentPageNumber  === navigationData.lastPageNumber) ? null : navigationData.currentPageNumber + 2, ///fix this mistake
+      second: (isOnLastPage) ? null : navigationData.currentPageNumber + 1,
+      third: (isOnLastPage || (navigationData.lastPageNumber === navigationData.currentPageNumber + 1)) ? null : navigationData.currentPageNumber + 2,
       previous: (navigationData.currentPageNumber === 1) ? null : navigationData.currentPageNumber - 1,
-      next: (navigationData.currentPageNumber === navigationData.lastPageNumber) ? null : navigationData.currentPageNumber + 1,
+      next: (isOnLastPage) ? null : navigationData.currentPageNumber + 1,
     }
   }
 

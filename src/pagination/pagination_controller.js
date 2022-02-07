@@ -16,9 +16,9 @@ export default class PaginationController {
   }
 
   createPagBtn = (navigationData) => {
-    Publisher.notify(Publisher.events.hideLoadBtn, navigationData);
     this.view.setupPagination(navigationData);
     this.view.setPaginationBtnsValue();
+    Publisher.notify(Publisher.events.hideLoadBtn, navigationData);
   }
 
   clickPagination = (event) => {

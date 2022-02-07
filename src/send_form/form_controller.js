@@ -6,7 +6,7 @@ export default class FormController {
 
   constructor(){
     this.model = new FormModel();
-    this.view = new FormView();
+    this.view = new FormView(this.eventHandler);
     Publisher.subscribe(Publisher.events.pageCreated, this.init);
     Publisher.subscribe(Publisher.events.clickOnSendBtn, this.sendComment);
     Publisher.subscribe(Publisher.events.renderListOnPage, this.savePage)
@@ -19,7 +19,6 @@ export default class FormController {
   sendComment = async () => {
     const page = this.currentPage;
     const isValid = this.view.checkValidation();
-    console.log(isValid);
 
     if (isValid) {
       const data = this.view.getFormData();
@@ -37,5 +36,10 @@ export default class FormController {
 
   savePage = (page) => {
     this.currentPage = page;
+  }
+
+  eventHandler = (e) => {
+    e.preventDefault();
+    Publisher.notify(Publisher.events.clickOnSendBtn, this.data);
   }
 }

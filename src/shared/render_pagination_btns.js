@@ -1,7 +1,7 @@
 export default function renderPaginationBtns() {
     return `
       <li class="pagination__item first">
-          First
+        First
       </li>
       <li class="pagination__item previous">«
       </li>
@@ -14,6 +14,6 @@ export default function renderPaginationBtns() {
       <li class="pagination__item next">»
       </li>
       <li class="pagination__item last">
-          Last
+        Last
       </li>`;
 }

@@ -51,9 +51,10 @@ export default class FormView extends View {
     warning: 'Fail validation! All fields are required, at least 3 characters.'
   }
 
-  constructor() {
+  constructor(eventHandler) {
     super();
     this.linkDomElem(this.domElem);
+    this.eventHandler = eventHandler;
   }
 
   createForm = () => {
@@ -94,11 +95,6 @@ export default class FormView extends View {
 
   initButton = () => {
     this.dom.button.addEventListener('click', this.eventHandler);
-  }
-
-  eventHandler = (e) => {
-    e.preventDefault();
-    Publisher.notify(Publisher.events.clickOnSendBtn, this.data);
   }
 
   checkValidation = () => {
